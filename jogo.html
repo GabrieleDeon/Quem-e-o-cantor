@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class= "no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Quem é o Cantor?</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;207;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="font/material-icons.css"> 
+
+</head>
+<body>
+
+    <section class="iniciar">
+        <h1>Quem é o Cantor?</h1>  
+        <h2>Ao iniciar e clicar em "play", ouça com atenção ao 
+            mix de músicas e selecione seus intérpretes 
+            dentre as opções.
+        </h2>  
+        <button>INICIAR</button>
+    </section>
+
+    <section class="cantores pagina1">  
+        <div class="superior">
+        <p><img class="icon" src="img/estrela.png">
+            Acertos: <span class="acertos">0</span></p>
+
+        <p><img class="icon" src="img/clock.png">
+            00:<span class="tempo">00</span></p>
+        </div>
+    
+    
+        <div class="conteudo">
+
+        <h2>Nível 1</h2>
+        <p> 
+        <h1>Quais os intérpretes das músicas?</h1>
+        <button type="button" class="play">play_circle_outline</button>
+        </p>    
+
+        <ul>
+            <li><img class="errado ajuda" src="img/luke.png"></li>
+            <li><img class="certo" src="img/post.png"></li>
+            <li><img class="errado" src="img/billie.png"></li>
+            <li><img class="certo" src="img/harry.png"></li>
+            <li><img class="errado" src="img/alec.png"></li>
+            <li><img class="errado" src="img/ed.png"></li>
+            <li><img class="errado" src="img/tyler.png"></li>
+            <li><img class="errado ajuda" src="img/camila.png"></li>
+            <li><img class="errado"  src="img/dan.png"></li>
+          </ul>
+        </div>
+    
+        <div class="inferior">
+          <p class="icones">
+            <img class="home" src="img/home.png">
+            <img class="vlm" src="img/som.png">
+            <img class="lbulb" src="img/lightBulb.png" data-pagina=".pagina1">
+          </p>
+        </div>
+      </section>
+
+      <section class="cantores pagina2">
+
+        <div class="superior">
+            <p><img class="icon" src="img/estrela.png">
+                Acertos: <span class="acertos">0</span></p>
+    
+            <p><img class="icon" src="img/clock.png">
+                00:<span class="tempo">00</span></p>
+            </div>
+        
+        
+            <div class="conteudo">
+    
+            <h2>Nível 2</h2>
+            <p> 
+            <h1>Quais os intérpretes das músicas?</h1>
+            <button type="button" class="play">play_circle_outline</button>
+            </p>    
+    
+            <ul>
+                <li><img class="certo" src="img/luke.png"></li>
+                <li><img class="errado" src="img/shawn.png"></li>
+                <li><img class="errado" src="img/billie.png"></li>
+                <li><img class="errado ajuda" src="img/harry.png"></li>
+                <li><img class="errado" src="img/alec.png"></li>
+                <li><img class="certo" src="img/khalid.png"></li>
+                <li><img class="certo" src="img/tyler.png"></li>
+                <li><img class="errado ajuda" src="img/camila.png"></li>
+                <li><img class="errado"  src="img/charliee.png"></li>
+              </ul>
+            </div>
+        
+            <div class="inferior">
+              <p class="icones">
+                <img class="home" src="img/home.png">
+                <img class="vlm" src="img/som.png">
+                <img class="lbulb" src="img/lightBulb.png" data-pagina=".pagina2">
+              </p>
+            </div>
+
+      </section>
+
+      <section class="cantores pagina3">
+          <h1>Fim de Jogo!</h1>
+
+          <img class="trofeu" src="img/trofeu.png">
+
+          <div class="pontos">
+              <p>
+                <span class="pontuacao">Sua pontuação: </span>
+                <span class="acertos"> 0 </span>
+              </p>
+              <p>
+                  <span class="erros">Erros: </span>
+                  <span id="erradas"> 0 </span>
+              </p>
+              <p>
+                <span class="duracao">Tempo: </span>
+                <span id="tempofinal"> </span>
+              </p>
+          </div>
+
+      </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    
+
+    /* ========== PÁGINA 1 ========== */
+
+
+    var musica = new Audio('');
+    var musica2 = new Audio('');
+    var musica3 = new Audio('');
+    var musica4 = new Audio('');
+    var musica5 = new Audio('');
+    var time;
+    let cont = 0;
+    vrfmsc =0; 
+    var vrf = 0;
+
+    $("section.iniciar button").on("click", function() {
+    //transição de tela
+    $("section").hide();
+    $("section.pagina1").show();
+
+    if (vrfmsc==0) {
+		setInterval(function(){
+  			var tempo = parseInt($('span.tempo').text());
+  			soma = tempo + 1;
+  			if (soma < 10) {
+  				soma = "0"+soma;
+  			};
+  			$('span.tempo').text(soma + " s");
+  		},1000);
+	}   else {
+		$('span.tempo').text(0 + " s");
+	}
+    });
+
+
+    var som = 0;
+    $("section.pagina1 .conteudo button.play").on("click", function () {
+    //dá play e também reinicia a música
+    if (som == 0) {
+  			musica = new Audio("musicas/wow.mp3");
+  			musica.play();
+  			musica2 = new Audio("musicas/golden.mp3");
+  			musica2.play();
+  			som+= 1;
+  		} else if (som == 1) {
+  			musica.pause();
+  			musica2.pause();
+  			som-= 1;
+  		}
+  		vrf++;
+      });
+
+        function trocarPagina(novaPagina){
+            if (vrf==1) {
+            	musica.pause();
+            	musica2.pause();
+            }
+            $("section").hide();
+            $("section.pagina"+novaPagina).show();
+            time = parseInt($('span.tempo').text());	
+  			$('#tempofinal').text(time+'s');
+   
+    };
+
+    $("section.pagina1 .inferior img.home").on("click", function() {
+    //transição de telas
+    if (vrf==1) {
+    	  musica.pause();
+        musica2.pause();
+        musica3.pause();
+        musica4.pause();
+        musica5.pause();
+    }
+    $("section").hide();
+    $("section.iniciar").show();
+    vrfmsc++;
+  });
+
+    var counter = 0;
+    $("section.pagina1 .inferior img.vlm").on("click", function() {
+    counter += 1;
+
+    if (counter % 2 == 0) {
+      musica.volume = 1.0;
+      musica2.volume = 1.0;
+    }else {
+      musica.volume = 0.0;
+      musica2.volume = 0.0;
+    }  
+  });
+
+  $("section.pagina1 .inferior img.lbulb").on("click", function() {
+    let alvo = $(this).data("pagina");
+    console.log(alvo); 
+    $(alvo+" .ajuda").css({opacity : 0.1});
+  });
+
+  $("img.certo").one("click", function(){
+
+    $(this).css({opacity : 0.5});
+  			var certo = parseInt($('span.acertos').eq(0).text());
+  			soma = certo + 1;
+  			$('span.acertos').text(soma);
+
+          cont++;
+          if (cont==2) {
+  			trocarPagina(2);
+  		} else if (cont ==5) {
+            trocarPagina(3);
+            musica3.pause();
+            musica4.pause();
+            musica5.pause();
+            musica6 = new Audio("musicas/win.wav");
+            musica6.play(); 
+          }  	
+  });
+
+  var erros = 0;
+  $("img.errado").one("click", function(){
+
+    $(this).css({opacity : 0.5});
+          cont++;
+  		if (cont==2) {
+  			trocarPagina(2);
+
+  		} else if (cont ==5) {
+            trocarPagina(3);
+            musica3.pause();
+            musica4.pause();
+            musica5.pause();
+            musica6 = new Audio("Musicas/win.wav");
+            musica6.play();
+          }
+
+    erros += 1;
+    $('#erradas').text(erros);
+  });
+
+  
+  /* ========== PÁGINA 2 ==========*/
+
+
+    var som2 = 0;
+    $("section.pagina2 .conteudo button.play").on("click", function () {
+    //dá play e também reinicia a música
+    if (som2 == 0) {
+  			musica3 = new Audio("musicas/talk.mp3");
+  			musica3.play();
+  			musica4 = new Audio("musicas/talk-fast.mp3");
+            musica4.play();
+            musica5 = new Audio("musicas/message-man.mp3");
+  			musica5.play();
+  			som2 += 1;
+  		} else if (som2 == 1) {
+  			musica3.pause();
+            musica4.pause();
+            musica5.pause();
+  			som2 -= 1;
+  		}
+  		vrf++;
+      });
+
+      $("section.pagina2 .inferior img.home").on("click", function() {
+    //transição de telas
+    if (vrf==2) {
+    	  musica.pause();
+        musica2.pause();
+        musica3.pause();
+        musica4.pause();
+        musica5.pause();
+    }
+    $("section").hide();
+    $("section.iniciar").show();
+    vrfmsc++;
+  });
+
+  var counter = 0;
+    $("section.pagina2 .inferior img.vlm").on("click", function() {
+
+    counter += 1;
+    if (counter % 2 == 0) {
+      musica3.volume = 1.0;
+      musica4.volume = 1.0;
+      musica5.volume = 1.0;
+    }else {
+      musica3.volume = 0.0;
+      musica4.volume = 0.0;
+      musica5.volume = 0.0;
+    }  
+  });
+
+
+    $("section.pagina2 .inferior img.lbulb").on("click", function() {
+    let alvo = $(this).data("pagina");
+    console.log(alvo); 
+    $(alvo+" .ajuda").css({opacity : 0.1});
+    });
+    
+    </script>
+    
+
+
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* ========== TELAS ========== */
+/*section.iniciar{display: none;}*/
+section.pagina1{display: none;}
+section.pagina2{display: none;}
+section.pagina3{display: none;}
+
+/* ========== BODY ========== */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: #935DC0;
+}
+section, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ========== TELA 1 - INICIAR ========== */
+section.iniciar{
+    text-align: center;
+    background: url(../img/cantores.png) no-repeat bottom;
+    background-size: 100%;
+}
+
+section.iniciar h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5em;
+    margin: 4vh 5vw 0 5vw;
+}
+
+section.iniciar h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    margin: 5vh 14vw 0 14vw;
+}
+
+section.iniciar button{
+    background: white;
+    border: none;
+    font-size: 1.5em;
+    color: #460a68;
+    width: 60vw;
+    margin: 15vw auto;
+    padding: 15px 0;
+    border-radius: 40px;
+}
+
+/* ========== TELA 2 - CANTORES ========== */
+
+section.cantores{
+    color: white;
+}
+
+section.cantores .superior{
+    background: #c5c200;
+    font-size: 1.2em;
+    padding: 10px;
+    text-align: left;
+    height: 11vh;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 50%;
+    margin-left: 29vh;
+    box-shadow: 5px 5px 3px -3px rgba(32, 32, 32, 0.5);;
+}
+
+section.cantores .superior p{
+    margin-bottom: 1vh;
+}
+
+section.cantores .superior p img.icon{
+    height: 14px;
+    width: 14px;
+    fill: white;
+}
+section.cantores .superior p span.mticons{
+    font-size: 1em;
+}
+
+section.cantores .conteudo {
+    height: 76vh;
+    padding: 4vh 5vw 0 5vw;
+}
+
+section.cantores .conteudo h2{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    margin-top: -4vh;
+    margin-bottom: 1vh;
+}
+
+section.cantores .conteudo p{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    display: flex;
+}
+
+section.cantores .conteudo h1{
+    margin-left: 18vw;
+    padding: 2vh 0 0 0;
+    font-size: 1.05em;
+}
+
+section.cantores .conteudo button{
+    margin-top: -7vh;
+    font-family: 'Material Icons';
+    border: none;
+    background: none;
+    font-size: 2.8em;
+    color: white;
+}
+
+section.cantores ul{
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section.cantores div ul li{
+    width: 29vw;
+    margin: 0vh 1vw 4vh 0;
+}
+section.cantores div ul li img{
+    width: 100%;
+}
+
+section.cantores .inferior{
+    width: 60%;
+    height: 11vh;
+    margin-left: 33vw;
+    background: #c5c200;
+    color: white;
+    font-size: 1.8em;
+    border-radius: 4px;
+    padding: 2vh;
+    box-shadow: 6px 0 3px 3px rgba(32, 32, 32, 0.5);;
+}
+section.cantores .inferior .icones{
+    display: flex;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    justify-content: space-between;
+}
+section.cantores .inferior .icones img{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 2px;
+}
+
+/* ========== TELA 3 - FINAL ========== */
+
+section.pagina3{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+section.pagina3 h1{
+    margin-top: 7vh;
+    font-size: 4em;
+}
+
+section.pagina3 .trofeu{
+    margin-top: 10vh;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+section.pagina3 .pontos{
+    width: 250px;
+    height: 100px;
+    margin-left: 24vw;
+    background: #c5c200;
+    font-size: 1.8em;
+    border-radius: 4px;
+    margin-top: 7vh;
+    padding: 2vh;
+    box-shadow: 6px 0 3px 3px rgba(32, 32, 32, 0.5);;
+}
+
+section.pagina3 .pontos p{
+    text-align: left;
+    margin-bottom: 1vh;
+}
